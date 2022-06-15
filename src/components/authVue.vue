@@ -1,39 +1,41 @@
 <template>
+  <div class="authVue" id="">
     <header class="reg_head">
-            <a href="#" class="logo_link"><img src="img/logo1.bmp" alt="logo" class="logo"></a>
+            <a href="#" class="logo_link"><img src="/img/logo1.bmp" alt="logo" class="logo"></a>
             <a href="profile.html" class="profile_link">Профиль</a>
     </header>
-    <main class="reg_main">
-        <h1 class="title">Регистрация</h1>
+    <main class="reg_main auth">
+        <h1 class="title">Авторизация</h1>
         <form  method="post" class="reg_form">
             <div class="input_block">
-                <label for="username">Имя</label>
-                <input type="text" name="username" id="username">
-            </div>
-            <div class="input_block">
-                <label for="birthday">Дата рождения</label>
-                <input type="date" name="birthday" id="birthday">
-            </div>
-            <div class="input_block">
-                <label for="email">Почта</label>
-                <input type="email" name="email" id="email">
+                <label for="login">Логин</label>
+                <input type="email" name="login" id="login">
             </div>
             <div class="input_block">
                 <label for="password">Пароль</label>
                 <input type="password" name="password" id="password">
             </div>
-            <div class="input_block">
-                <label for="passwordConfirm">Повторите пароль</label>
-                <input type="password" name="passwordConfirm" id="passwordConfirm">
-            </div>
-            <button type="submit" class="reg_btn">Зарегистрироваться</button>
+            
+            <button type="submit" class="auth_btn">Войти</button>
         </form>
-       <p>У вас уже есть аккаунт? <a href="index.html" class="exist">Войти</a></p>
+        <p class="fogot"><a href="forgot.html"><b>Забыли пароль?</b></a></p>
+       <p>Еще нет аккаунта? <a href="regist.html" class="exist">Зарегистрироваться</a></p>
     </main>
+ </div>
 </template>
 
 <script>
 export default {
+    name:'authVue',
+    components:{},
+    props:{},
+    data(){
+        return {}
+    },
+    computed:{},
+    methods:{},
+    watch:{},
+
 }
 </script>
 
@@ -60,7 +62,6 @@ button{
     font-size: 15px;
     line-height: 20px;
 }
-
 header{
     padding: 20px 100px;
     display: flex;
@@ -69,6 +70,8 @@ header{
     border-bottom: 1px solid #000;
 }
 .logo{max-width: 200px;}
+main{padding: 30px 100px;}
+.reg_main p{text-align: center;margin-top: 20px;}
 main{padding: 30px 100px;}
 .reg_main p{text-align: center;margin-top: 20px;}
 .title{
@@ -95,4 +98,10 @@ main{padding: 30px 100px;}
     margin-left: 33%;
     cursor: pointer;
 }
+.auth_btn{
+    margin-left: 43%;
+    cursor: pointer;
+}
+.auth{padding-top: 150px;}
+.forgot_btn{margin-left: 35%;}
 </style>

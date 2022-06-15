@@ -1,4 +1,5 @@
 <template>
+<div class="edit">
     <header class="reg_head">
             <a href="#" class="logo_link"><img src="img/logo1.bmp" alt="logo" class="logo"></a>
             <ul class="main_menu">
@@ -39,6 +40,7 @@
             </div>
         </div>
     </main>
+    </div>
 </template>
 
 <script>

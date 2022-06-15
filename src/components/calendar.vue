@@ -1,4 +1,5 @@
 <template>
+<div class="calendar">
     <header class="reg_head">
             <a href="#" class="logo_link"><img src="img/logo1.bmp" alt="logo" class="logo"></a>
             <ul class="main_menu">
@@ -42,24 +43,12 @@
             </div>
         </div>
     </main>
+    </div>
 </template>
 
 <script>
 export default {
-    // function yearsOut(){
-    // var years = ''
 
-    // for(let i = 1; i<=100; i++){
-    //     years += '<div class="year">'
-    //     years += '<a href="#addModal"><p class="year_count">'+i+'</p></a>'
-    //     years += '</div>'
-    // }
-
-    // $('.calendar_block').html(years)
-
-// }
-
-// yearsOut()
 }
 </script>
 
