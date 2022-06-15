@@ -4,7 +4,7 @@
             <a href="#" class="logo_link"><img src="/img/logo1.bmp" alt="logo" class="logo"></a>
             <a href="profile.html" class="profile_link">Профиль</a>
     </header>
-    <main class="reg_main auth">
+    <main class="reg_main authVue">
         <h1 class="title">Авторизация</h1>
         <form  method="post" class="reg_form">
             <div class="input_block">
@@ -29,9 +29,7 @@ export default {
     name:'authVue',
     components:{},
     props:{},
-    data(){
-        return {}
-    },
+    data(){},
     computed:{},
     methods:{},
     watch:{},

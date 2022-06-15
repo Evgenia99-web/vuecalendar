@@ -20,6 +20,7 @@
         <p class="fogot"><a href="forgot.html"><b>Забыли пароль?</b></a></p>
        <p>Еще нет аккаунта? <router-view to="/reg" active-class="exist">Зарегистрироваться</router-view></p>
     </main>
+     <router-view></router-view>
  </div>
   
 </template>
