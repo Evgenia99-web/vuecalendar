@@ -1,9 +1,5 @@
 <template>
 <div class="forgotVue">
-    <header class="reg_head">
-            <a href="index.html" class="logo_link"><img src="img/logo1.bmp" alt="logo" class="logo"></a>
-            <a href="profile.html" class="profile_link">Профиль</a>
-    </header>
     <main class="reg_main auth">
         <h1 class="title">Восстановление пароля</h1>
         <form  method="post" class="reg_form">
@@ -47,7 +43,7 @@ a{
 }
 ul{list-style: none;}
 button{
-    background: rgba(18, 235, 255, 0.75);
+    background: #f7d344;
     border: none;
     padding: 10px 25px;
     font-style: normal;

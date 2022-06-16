@@ -1,9 +1,5 @@
 <template>
   <div class="authVue" id="">
-    <header class="reg_head">
-            <a href="#" class="logo_link"><img src="/img/logo1.bmp" alt="logo" class="logo"></a>
-            <a href="profile.html" class="profile_link">Профиль</a>
-    </header>
     <main class="reg_main authVue">
         <h1 class="title">Авторизация</h1>
         <form  method="post" class="reg_form">
@@ -18,8 +14,6 @@
             
             <button type="submit" class="auth_btn">Войти</button>
         </form>
-        <p class="fogot"><a href="forgot.html"><b>Забыли пароль?</b></a></p>
-       <p>Еще нет аккаунта? <a href="regist.html" class="exist">Зарегистрироваться</a></p>
     </main>
  </div>
 </template>
@@ -39,35 +33,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-*{margin: 0;padding: 0;}
-body{
-    height: 100vh;
-    font-family: 'Inter', sans-serif;
-}
-a{
-    text-decoration: none;
-    font-style: normal;
-    font-weight: 400;
-    color: #000;
-}
-ul{list-style: none;}
-button{
-    background: rgba(18, 235, 255, 0.75);
-    border: none;
-    padding: 10px 25px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 20px;
-}
-header{
-    padding: 20px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #000;
-}
-.logo{max-width: 200px;}
+
 main{padding: 30px 100px;}
 .reg_main p{text-align: center;margin-top: 20px;}
 main{padding: 30px 100px;}
@@ -100,6 +66,6 @@ main{padding: 30px 100px;}
     margin-left: 43%;
     cursor: pointer;
 }
-.auth{padding-top: 150px;}
+.authVue{padding-top: 150px;}
 .forgot_btn{margin-left: 35%;}
 </style>

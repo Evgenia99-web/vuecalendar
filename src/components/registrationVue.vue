@@ -1,9 +1,5 @@
 <template>
 <div class="registrationVue">
-    <header class="reg_head">
-            <a href="#" class="logo_link"><img src="img/logo1.bmp" alt="logo" class="logo"></a>
-            <a href="profile.html" class="profile_link">Профиль</a>
-    </header>
     <main class="reg_main">
         <h1 class="title">Регистрация</h1>
         <form  method="post" class="reg_form">
@@ -29,7 +25,6 @@
             </div>
             <button type="submit" class="reg_btn">Зарегистрироваться</button>
         </form>
-       <p>У вас уже есть аккаунт? <a href="index.html" class="exist">Войти</a></p>
     </main>
 </div>
 </template>
@@ -56,7 +51,7 @@ a{
 }
 ul{list-style: none;}
 button{
-    background: rgba(18, 235, 255, 0.75);
+    background: #f7d344;
     border: none;
     padding: 10px 25px;
     font-style: normal;
