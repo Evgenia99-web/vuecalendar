@@ -25,14 +25,24 @@
             </div>
             <button type="submit" class="reg_btn">Зарегистрироваться</button>
         </form>
+
+        {{info}}
     </main>
 </div>
 </template>
 
 <script>
+// import { assertExpressionStatement } from '@babel/types'
+// import { response } from 'express'
+
 export default {
     name:'registrationVue',
-    components:{}
+    components:{},
+    mounted(){
+        // axios 
+        // .post('http://life-calendar.std-1930.ist.mospolytech.ru/api/v1/users.json')
+        // .then(response => (this.info = response));
+    }
 }
 </script>
 

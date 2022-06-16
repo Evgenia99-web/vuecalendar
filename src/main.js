@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from "./router";
+import store from "./store";
 import authVue from '@/components/authVue.vue';
 import registrationVue from '@/components/registrationVue.vue'
 import forgotVue from '@/components/forgotVue'
@@ -7,7 +9,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 
-createApp(App).mount('#app')
+
+createApp(App)
+     .use(router)
+     .use(store)
+.mount('#app')
 
 Vue.use(Router)
 export default new Router({
