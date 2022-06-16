@@ -17,9 +17,29 @@
                 <!-- <div class="radio_btn"> -->
                     <input type="radio" id="btn3" v-model="activeComponent" value="forgotVue" /> 
                     <label class="hidden" id="btn3">Забыли пароль</label>
+                <!-- </div> -->  
+            </div>
+            <!-- <div class="choose" v-else> -->
+                <!-- <div class="radio_btn"> -->
+                    <!-- <input type="radio" id="btn1" v-model="activeComponent" value="calendarVue" />  -->
+                    <!-- <label class="hidden" for="btn1">Календарь</label> -->
                 <!-- </div> -->
                 
-            </div>
+                <!-- <div class="radio_btn"> -->
+                    <!-- <input type="radio" id="btn2" v-model="activeComponent" value="goalsVue" />  -->
+                    <!-- <label class="hidden" id="btn2">Достижения</label> -->
+                <!-- </div> -->
+                
+                <!-- <div class="radio_btn"> -->
+                    <!-- <input type="radio" id="btn3" v-model="activeComponent" value="faqVue" />  -->
+                    <!-- <label class="hidden" id="btn3">FAQ</label> -->
+                <!-- </div> -->  
+                <!-- <div class="radio_btn"> -->
+                    <!-- <input type="radio" id="btn3" v-model="activeComponent" value="profileVue" /> 
+                    <label class="hidden" id="btn3">Профиль</label> -->
+                <!-- </div> --> 
+            <!-- </div> -->
+
             
     </header>
     
@@ -37,12 +57,16 @@
 import registrationVue from './components/registrationVue.vue'
 import authVue from './components/authVue.vue'
 import forgotVue from './components/forgotVue.vue';
+import calendarVue from './components/calendarVue.vue';
+import faqVue from './components/faqVue.vue';
+import goalsVue from './components/goalsVue.vue';
+import profileVue from './components/profileVue.vue';
 export default {
     name: 'app',
     data(){
         return{activeComponent:"authVue",};
     },
-    components:{registrationVue,authVue,forgotVue},
+    components:{registrationVue,authVue,forgotVue,calendarVue,faqVue,goalsVue,profileVue},
 };
 
 </script>
@@ -77,7 +101,7 @@ header{
     border-bottom: 1px solid #000;
 }
 .logo{max-width: 200px;}
-.choose{display: flex;}
+.choose{display: flex; align-items: center;}
 .radio_btn {
 	display: inline-block;
 	margin-right: 10px;

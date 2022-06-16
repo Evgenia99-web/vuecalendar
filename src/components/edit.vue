@@ -63,7 +63,7 @@ a{
 }
 ul{list-style: none;}
 button{
-    background: rgba(18, 235, 255, 0.75);
+    background: #f7d344;;
     border: none;
     padding: 10px 25px;
     font-style: normal;

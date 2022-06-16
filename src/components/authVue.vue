@@ -2,10 +2,10 @@
   <div class="authVue" id="">
     <main class="reg_main authVue">
         <h1 class="title">Авторизация</h1>
-        <form  method="post" class="reg_form" @submit="handleLogin">
+        <form  method="post" class="reg_form">
             <div class="input_block">
                 <label for="login">Логин</label>
-                <input type="email" v-model="userlogin" name="login" id="login">
+                <input type="email" v-model="login" name="login" id="login">
             </div>
             <div class="input_block">
                 <label for="password">Пароль</label>
@@ -13,12 +13,6 @@
             </div>
             
             <button type="submit" class="auth_btn">Войти</button>
-
-            <div class="form-group">
-            <div v-if="message" class="alert alert-danger" role="alert">
-                {{ message }}
-            </div>
-            </div>
         </form>
     </main>
  </div>
@@ -30,35 +24,8 @@ export default {
     components:{},
     props:{},
     data(){},
-    computed:{
-        loggedIn() {
-        return this.$store.state.auth.status.loggedIn;
-        },
-    },
-    created() {
-        if (this.loggedIn) {
-        this.$router.push("/profileVue");
-        }
-    },
-    methods:{
-        handleLogin(user) {
-        this.loading = true;
-        this.$store.dispatch("auth/login", user).then(
-            () => {
-            this.$router.push("/profileVue");
-            },
-            (error) => {
-            this.loading = false;
-            this.message =
-                (error.response &&
-                error.response.data &&
-                error.response.data.message) ||
-                error.message ||
-                error.toString();
-            }
-        );
-        },
-    },
+    computed:{},
+    methods:{},
     watch:{},
 
 }
