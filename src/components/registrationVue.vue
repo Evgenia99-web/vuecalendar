@@ -36,7 +36,8 @@
 
 <script>
 export default {
-    name:'registrationVue'
+    name:'registrationVue',
+    components:{}
 }
 </script>
 
