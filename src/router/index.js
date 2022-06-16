@@ -1,13 +1,8 @@
-import { createApp } from 'vue'
-import App from './App.vue'
 import authVue from '@/components/authVue.vue';
 import registrationVue from '@/components/registrationVue.vue'
 import forgotVue from '@/components/forgotVue'
 import Vue from 'vue'
 import Router from 'vue-router'
-
-
-createApp(App).mount('#app')
 
 Vue.use(Router)
 export default new Router({
@@ -17,19 +12,3 @@ export default new Router({
         { path: '/forgot', name:forgotVue, component: forgotVue}
     ]
 })
-
-
-//     function yearsOut(){
-//     var years = ''
-
-//     for(let i = 1; i<=100; i++){
-//         years += '<div class="year">'
-//         years += '<a href="#addModal"><p class="year_count">'+i+'</p></a>'
-//         years += '</div>'
-//     }
-
-//     ('.calendar_block').html(years)
-
-// }
-
-// yearsOut()

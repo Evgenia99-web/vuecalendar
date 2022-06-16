@@ -1,4 +1,5 @@
 <template>
+<div class="forgotVue">
     <header class="reg_head">
             <a href="index.html" class="logo_link"><img src="img/logo1.bmp" alt="logo" class="logo"></a>
             <a href="profile.html" class="profile_link">Профиль</a>
@@ -22,10 +23,12 @@
             <button type="submit" class="auth_btn forgot_btn">Сменить пароль</button>
         </form>
     </main>
+    </div>
 </template>
 
 <script>
 export default {
+    name:'forgotVue'
 }
 </script>
 
