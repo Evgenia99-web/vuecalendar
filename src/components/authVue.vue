@@ -2,10 +2,10 @@
   <div class="authVue" id="">
     <main class="reg_main authVue">
         <h1 class="title">Авторизация</h1>
-        <form  method="post" class="reg_form">
+        <form  method="post" class="reg_form" @submit.prevent="authtorizate">
             <div class="input_block">
-                <label for="login">Логин</label>
-                <input type="email" v-model="login" name="login" id="login">
+                <label for="login">Email</label>
+                <input type="email" v-model="email" name="login" id="login">
             </div>
             <div class="input_block">
                 <label for="password">Пароль</label>
@@ -23,9 +23,22 @@ export default {
     name:'authVue',
     components:{},
     props:{},
-    data(){},
+    data(){
+        return{
+            email:"",
+            password:""
+        }
+    },
     computed:{},
-    methods:{},
+    methods:{
+        authtorizate: function () {
+        let email = this.email 
+        let password = this.password
+        this.$store.dispatch('email', { email, password })
+       .then(() => this.$router.push('/profileVue'))
+       .catch(err => console.log(err))
+      }
+    },
     watch:{},
 
 }

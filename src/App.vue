@@ -3,7 +3,29 @@
  <div id="app">
     <header class="reg_head">
             <a href="#" class="logo_link"><img src="/img/logo1.bmp" alt="logo" class="logo"></a>
-            <div class="choose">
+            
+            <div class="choose" v-if="isLoggedIn">
+                <!-- <div class="radio_btn"> -->
+                    <input type="radio" id="btn1" v-model="activeComponent" value="calendarVue" /> 
+                    <label class="hidden" for="btn1">Календарь</label>
+                <!-- </div> -->
+                
+                <!-- <div class="radio_btn"> -->
+                    <input type="radio" id="btn2" v-model="activeComponent" value="goalsVue" /> 
+                    <label class="hidden" id="btn2">Достижения</label>
+                <!-- </div> -->
+                
+                <!-- <div class="radio_btn"> -->
+                    <input type="radio" id="btn3" v-model="activeComponent" value="faqVue" /> 
+                    <label class="hidden" id="btn3">FAQ</label>
+                <!-- </div> -->  
+                <!-- <div class="radio_btn"> -->
+                    <input type="radio" id="btn3" v-model="activeComponent" value="profileVue" /> 
+                    <label class="hidden" id="btn3">Профиль</label>
+                <!-- </div> --> 
+            </div>
+            <span v-if="isLoggedIn"> | <a @click="logout">Logout</a></span>
+            <div class="choose" v-else>
                 <!-- <div class="radio_btn"> -->
                     <input type="radio" id="btn1" v-model="activeComponent" value="authVue" /> 
                     <label class="hidden" for="btn1">Авторизация</label>
@@ -19,26 +41,7 @@
                     <label class="hidden" id="btn3">Забыли пароль</label>
                 <!-- </div> -->  
             </div>
-            <!-- <div class="choose" v-else> -->
-                <!-- <div class="radio_btn"> -->
-                    <!-- <input type="radio" id="btn1" v-model="activeComponent" value="calendarVue" />  -->
-                    <!-- <label class="hidden" for="btn1">Календарь</label> -->
-                <!-- </div> -->
-                
-                <!-- <div class="radio_btn"> -->
-                    <!-- <input type="radio" id="btn2" v-model="activeComponent" value="goalsVue" />  -->
-                    <!-- <label class="hidden" id="btn2">Достижения</label> -->
-                <!-- </div> -->
-                
-                <!-- <div class="radio_btn"> -->
-                    <!-- <input type="radio" id="btn3" v-model="activeComponent" value="faqVue" />  -->
-                    <!-- <label class="hidden" id="btn3">FAQ</label> -->
-                <!-- </div> -->  
-                <!-- <div class="radio_btn"> -->
-                    <!-- <input type="radio" id="btn3" v-model="activeComponent" value="profileVue" /> 
-                    <label class="hidden" id="btn3">Профиль</label> -->
-                <!-- </div> --> 
-            <!-- </div> -->
+            
 
             
     </header>
@@ -67,6 +70,27 @@ export default {
         return{activeComponent:"authVue",};
     },
     components:{registrationVue,authVue,forgotVue,calendarVue,faqVue,goalsVue,profileVue},
+//     created: function () {
+//     this.$http.interceptors.response.use(undefined, function (err) {
+//       return new Promise(function (resolve, reject) {
+//         if (err.status === 401 && err.config && !err.config.__isRetryRequest) {
+//           this.$store.dispatch("logout")
+//         }
+//         throw err;
+//       });
+//     });
+//   }
+    // computed : {
+    //   isLoggedIn : function(){ return this.$store.getters.isLoggedIn}
+    // },
+    // methods: {
+    //   logout: function () {
+    //     this.$store.dispatch('logout')
+    //     .then(() => {
+    //       this.$router.push('/login')
+    //     })
+    //   }
+    // },
 };
 
 </script>

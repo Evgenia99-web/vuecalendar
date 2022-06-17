@@ -2,26 +2,26 @@
 <div class="registrationVue">
     <main class="reg_main">
         <h1 class="title">Регистрация</h1>
-        <form  method="post" class="reg_form">
+        <form  method="post" class="reg_form" @submit.prevent="register">
             <div class="input_block">
                 <label for="username">Имя</label>
-                <input type="text" name="username" id="username">
+                <input type="text" name="username" id="username" v-model="username">
             </div>
             <div class="input_block">
                 <label for="birthday">Дата рождения</label>
-                <input type="date" name="birthday" id="birthday">
+                <input type="date" name="birthday" id="birthday" v-model="birthday">
             </div>
             <div class="input_block">
                 <label for="email">Почта</label>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" v-model="email">
             </div>
             <div class="input_block">
                 <label for="password">Пароль</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" v-model="password">
             </div>
             <div class="input_block">
                 <label for="passwordConfirm">Повторите пароль</label>
-                <input type="password" name="passwordConfirm" id="passwordConfirm">
+                <input type="password" name="passwordConfirm" id="passwordConfirm" v-model="password_confirm">
             </div>
             <button type="submit" class="reg_btn">Зарегистрироваться</button>
         </form>
@@ -32,16 +32,30 @@
 </template>
 
 <script>
-// import { assertExpressionStatement } from '@babel/types'
-// import { response } from 'express'
 
 export default {
     name:'registrationVue',
     components:{},
-    mounted(){
-        // axios 
-        // .post('http://life-calendar.std-1930.ist.mospolytech.ru/api/v1/users.json')
-        // .then(response => (this.info = response));
+    data(){
+        return{
+            username:"",
+            birthday:"",
+            email:"",
+            password:"",
+            password_confirm:""
+        }
+    },
+    methods:{
+        register: function () {
+       this.$store.dispatch('register', {
+          username: this.username,
+          birthday:this.birthday,
+          email: this.email,
+          password: this.password
+        })
+       .then(() => this.$router.push('/profileVue'))
+       .catch(err => console.log(err))
+      }
     }
 }
 </script>
