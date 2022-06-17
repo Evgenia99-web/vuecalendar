@@ -4,8 +4,8 @@
         <h1 class="title">Авторизация</h1>
         <form  method="post" class="reg_form" @submit.prevent="authtorizate">
             <div class="input_block">
-                <label for="login">Логин</label>
-                <input type="text" v-model="username" name="login" id="login">
+                <label for="login">Email</label>
+                <input type="email" v-model="username" name="login" id="login">
             </div>
             <div class="input_block">
                 <label for="password">Пароль</label>

@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import store from './store.js'
 import profileVue from '../components/profileVue.vue'
 import Login from '../components/authVue.vue'
 import Register from '../components/registrationVue.vue'

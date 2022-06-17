@@ -11,14 +11,14 @@ export const userService = {
     delete: _delete
 };
 
-function login(email, password) {
+function login(username, password) {
     const requestOptions = {
-        method: 'GET',
+        method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ username, password })
     };
 
-    return fetch(`${config.apiUrl}`, requestOptions)
+    return fetch(`${config.apiUrl}/login`, requestOptions)
         .then(handleResponse)
         .then(user => {
             // login successful if there's a jwt token in the response
@@ -43,7 +43,7 @@ function register(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`${config.apiUrl}/`, requestOptions).then(handleResponse);
+    return fetch(`${config.apiUrl}//api/v1/users`, requestOptions).then(handleResponse);
 }
 
 function getAll() {
@@ -52,7 +52,7 @@ function getAll() {
         headers: authHeader()
     };
 
-    return fetch(`${config.apiUrl}/`, requestOptions).then(handleResponse);
+    return fetch(`${config.apiUrl}//api/v1/users`, requestOptions).then(handleResponse);
 }
 
 
@@ -62,7 +62,7 @@ function getById(id) {
         headers: authHeader()
     };
 
-    return fetch(`${config.apiUrl}/${id}`, requestOptions).then(handleResponse);
+    return fetch(`${config.apiUrl}/api/v1/users/${id}`, requestOptions).then(handleResponse);
 }
 
 function update(user) {
@@ -72,7 +72,7 @@ function update(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`${config.apiUrl}/${user.id}`, requestOptions).then(handleResponse);
+    return fetch(`${config.apiUrl}/api/v1/users/${user.id}`, requestOptions).then(handleResponse);
 }
 function _delete(id) {
     const requestOptions = {
@@ -80,7 +80,7 @@ function _delete(id) {
         headers: authHeader()
     };
 
-    return fetch(`${config.apiUrl}/${id}`, requestOptions).then(handleResponse);
+    return fetch(`${config.apiUrl}/api/v1/users/${id}`, requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {

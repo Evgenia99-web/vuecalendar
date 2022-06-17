@@ -29,7 +29,7 @@ module.exports = {
     externals: {
         // global app config object
         config: JSON.stringify({
-            apiUrl: 'http://life-calendar.std-1930.ist.mospolytech.ru/api/v1/users'
+            apiUrl: 'http://life-calendar.std-1930.ist.mospolytech.ru'
         })
     }
 }
