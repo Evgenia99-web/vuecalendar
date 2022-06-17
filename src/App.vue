@@ -41,7 +41,6 @@
                     <label class="hidden" id="btn3">Забыли пароль</label>
                 <!-- </div> -->  
             </div>
-            
 
             
     </header>
@@ -64,6 +63,7 @@ import calendarVue from './components/calendarVue.vue';
 import faqVue from './components/faqVue.vue';
 import goalsVue from './components/goalsVue.vue';
 import profileVue from './components/profileVue.vue';
+
 export default {
     name: 'app',
     data(){

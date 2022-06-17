@@ -14,10 +14,10 @@
             <img src="img/avatar.jpg" alt="avatar" class="avatar">
             <div class="profile_info">
                 <h3 class="smalltitle">Информация пользователя</h3>
-                <div class="profile_text">
-                    <p class="name">Имя: Николай</p>
-                    <p class="birthday">Дата рождения: 23.12.2000</p>
-                    <p class="age">Возраст: 21</p>
+                <div class="profile_text" v-for="user in users.items" :key="user.id">
+                    <p class="name">Имя: {{user.name}}</p>
+                    <p class="birthday">Дата рождения: {{user.birthDate}}</p>
+                    <p><router-link to="/login">Выйти</router-link></p>
                 </div>
                 <button class="edit_btn"><a href="edit.html">Редактировать данные</a></button>
             </div>
@@ -26,12 +26,28 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
+    computed: {
+        ...mapState({
+            account: state => state.account,
+            users: state => state.users.all
+        })
+    },
+    created () {
+        this.getAllUsers();
+    },
+    methods: {
+        ...mapActions('users', {
+            getAllUsers: 'getAll',
+            deleteUser: 'delete'
+        })
+    }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 *{margin: 0;padding: 0;}
 body{
     height: 100vh;

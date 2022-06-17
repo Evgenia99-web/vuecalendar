@@ -4,8 +4,8 @@
         <h1 class="title">Авторизация</h1>
         <form  method="post" class="reg_form" @submit.prevent="authtorizate">
             <div class="input_block">
-                <label for="login">Email</label>
-                <input type="email" v-model="email" name="login" id="login">
+                <label for="login">Логин</label>
+                <input type="text" v-model="username" name="login" id="login">
             </div>
             <div class="input_block">
                 <label for="password">Пароль</label>
@@ -19,27 +19,35 @@
 </template>
 
 <script>
+//import { mapState, mapActions } from 'vuex'
+
 export default {
     name:'authVue',
     components:{},
     props:{},
     data(){
         return{
-            email:"",
+            username:"",
             password:""
         }
     },
-    computed:{},
-    methods:{
-        authtorizate: function () {
-        let email = this.email 
-        let password = this.password
-        this.$store.dispatch('email', { email, password })
-       .then(() => this.$router.push('/profileVue'))
-       .catch(err => console.log(err))
-      }
-    },
-    watch:{},
+    // computed: {
+    //     ...mapState('account', ['status'])
+    // },
+    // created () {
+    //     // reset login status
+    //     this.logout();
+    // },
+    // methods: {
+    //     ...mapActions('account', ['login', 'logout']),
+    //     handleSubmit (e) {
+    //         this.submitted = true;
+    //         const { username, password } = this;
+    //         if (username && password) {
+    //             this.login({ username, password })
+    //         }
+    //     }
+    // }
 
 }
 </script>

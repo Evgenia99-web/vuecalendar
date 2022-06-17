@@ -2,7 +2,7 @@
 <div class="registrationVue">
     <main class="reg_main">
         <h1 class="title">Регистрация</h1>
-        <form  method="post" class="reg_form" @submit.prevent="register">
+        <form  method="post" class="reg_form" @submit.prevent="handleSubmit">
             <div class="input_block">
                 <label for="username">Имя</label>
                 <input type="text" name="username" id="username" v-model="username">
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-
+//import { mapState, mapActions } from 'vuex'
 export default {
     name:'registrationVue',
     components:{},
@@ -45,18 +45,20 @@ export default {
             password_confirm:""
         }
     },
-    methods:{
-        register: function () {
-       this.$store.dispatch('register', {
-          username: this.username,
-          birthday:this.birthday,
-          email: this.email,
-          password: this.password
-        })
-       .then(() => this.$router.push('/profileVue'))
-       .catch(err => console.log(err))
-      }
-    }
+    // computed: {
+    //     ...mapState('account', ['status'])
+    // },
+    // methods: {
+    //     ...mapActions('account', ['register']),
+    //     handleSubmit(e) {
+    //         this.submitted = true;
+    //         this.$validator.validate().then(valid => {
+    //             if (valid) {
+    //                 this.register(this.user);
+    //             }
+    //         });
+    //     }
+    // }
 }
 </script>
 
